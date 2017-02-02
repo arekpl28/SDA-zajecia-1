@@ -2,9 +2,19 @@ package zajecia;
 
 public class Zajecia3 {
     public static void main(String[] args) {
-        int[] numbers = {-5, -3, -1, 1, 3, 5};
-        int sumOfNumbers = sumOf(numbers);
-        System.out.println(sumOfNumbers);
+        int[] numbers = {-5, -3, -1, 1, 3, 5, 100, 100000, 1234422};
+        int product = productOfPositive(numbers);
+        System.out.println(product);
+    }
+
+    public static int productOfPositive(int[] array) {
+        int product = 1;
+        for (int i = 0; i < array.length; i++) {
+            if (isPositive(array[i])) {
+                product *= array[i];
+            }
+        }
+        return product;
     }
 
     public static boolean isPositive(int number) {

@@ -1,5 +1,7 @@
-package zajecia;
+package zajecia.czwarte;
 
+
+import java.util.Scanner;
 
 public class Zajecia4 {
     public static void main(String[] args) {
@@ -12,11 +14,14 @@ public class Zajecia4 {
 //        System.out.println(productOfNumbers(5));
 //        System.out.println(fahrenheitToCelsius(68));
 //        System.out.println(celsiusToFahrenheit(20));
-        int[] array = {1, 2, 3, 4, 6};
-        statistics(array);
+//        int[] array = {1, 2, 3, 4, 6};
+//        statistics(array);
+
 
 
     }
+
+
 
     public static void statistics(int[] array) {
         System.out.println("Avg of elements is: " + avg(array));
@@ -55,7 +60,7 @@ public class Zajecia4 {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             if (isEven(array[i]))
-                sum ++;
+                sum++;
         }
         return sum;
     }
@@ -69,7 +74,7 @@ public class Zajecia4 {
     }
 
     public static int sumOfOdd(int[] array) {
-        return array.length-sumOfEven(array);
+        return array.length - sumOfEven(array);
     }
 
     public static double fahrenheitToCelsius(double fahrenheit) {

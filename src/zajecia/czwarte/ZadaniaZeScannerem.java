@@ -14,10 +14,36 @@ public class ZadaniaZeScannerem {
 //        int[] array = {1, 2, 3, 4, -1, -2, -3};
 //        System.out.println("Min: " + min(array));
 //        System.out.println("Max: " + max(array));
-        System.out.println("Grade system 2000 z.o.o");
-        double avg = avgOfGrades();
-        System.out.println("Avg of your grades is: " + avg);
+//        System.out.println("Grade system 2000 z.o.o");
+//        double avg = avgOfGrades();
+//        System.out.println("Avg of your grades is: " + avg);
+        calculator();
+
     }
+
+    public static void calculator() {
+        System.out.println("1. Dodawanie");
+        System.out.println("2. Odejmowanie");
+        System.out.println("3. Mnozenie");
+        System.out.println("4. Dzielenie");
+        int number = getNumberFromUser("Choose your desicison: ");
+        if (number >= 0 && number < 5) {
+            int a = getNumberFromUser("Insert first number: ");
+            int b = getNumberFromUser("Insert second number: ");
+            if (number == 1) {
+                System.out.println(a + " + " + b + " = " + (a + b));
+            } else if (number == 2) {
+                System.out.println(a - b);
+            } else if (number == 3) {
+                System.out.println(a * b);
+            } else {
+                System.out.println(a / b);
+            }
+        } else {
+            System.out.println("Wprowadziles zle dane!!!!!");
+        }
+    }
+
 
     public static double avgOfGrades() {
         int size = getNumberFromUser("Insert numbers of grades: ");

@@ -22,25 +22,33 @@ public class ZadaniaZeScannerem {
     }
 
     public static void calculator() {
-        System.out.println("1. Dodawanie");
-        System.out.println("2. Odejmowanie");
-        System.out.println("3. Mnozenie");
-        System.out.println("4. Dzielenie");
-        int number = getNumberFromUser("Choose your desicison: ");
+        System.out.println("CALCULATOR");
+        System.out.println("---------------------------------");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("---------------------------------");
+        int number = getNumberFromUser("Choose your decision: ");
         if (number >= 0 && number < 5) {
+            System.out.println("---------------------------------");
             int a = getNumberFromUser("Insert first number: ");
             int b = getNumberFromUser("Insert second number: ");
+            System.out.println("---------------------------------");
+            System.out.print("Your result is: ");
             if (number == 1) {
                 System.out.println(a + " + " + b + " = " + (a + b));
             } else if (number == 2) {
-                System.out.println(a - b);
+                System.out.println(a + " - " + b + " = " + (a - b));
             } else if (number == 3) {
-                System.out.println(a * b);
+                System.out.println(a + " * " + b + " = " + (a * b));
             } else {
-                System.out.println(a / b);
+                System.out.println(a + " / " + b + " = " + (a / b));
             }
         } else {
-            System.out.println("Wprowadziles zle dane!!!!!");
+            System.out.println("---------------------------------");
+            System.out.println("Incorrect data entered !!!!!!!!!");
+            System.out.println("---------------------------------");
         }
     }
 

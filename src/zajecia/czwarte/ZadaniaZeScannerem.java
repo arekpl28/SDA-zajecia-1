@@ -17,8 +17,46 @@ public class ZadaniaZeScannerem {
 //        System.out.println("Grade system 2000 z.o.o");
 //        double avg = avgOfGrades();
 //        System.out.println("Avg of your grades is: " + avg);
-        calculator();
+//        calculator();
+        bmi();
 
+    }
+
+    public static void bmi() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("CALCULATOR BMI");
+        System.out.println("---------------------------------");
+        System.out.print("Please enter your height in centimeters: ");
+        double hight = scanner.nextDouble();
+        if (hight > 20 && hight < 500) {
+            System.out.print("Please enter your weight: ");
+            int weight = scanner.nextInt();
+            System.out.println("---------------------------------");
+            if (weight > 10) {
+                double hightBmi = hight / 100;
+                double bmi = weight / (hightBmi * hightBmi);
+                System.out.println("Your BMI is: " + bmi);
+                System.out.println("---------------------------------");
+                if (bmi <= 18.5) {
+                    System.out.println("You have underweight.");
+                } else if (bmi > 18.5 && bmi < 25) {
+                    System.out.println("You have an appropriate weight.");
+                } else if (bmi >= 25 && bmi < 30) {
+                    System.out.println("You are overweight");
+                } else if (bmi >= 30 && bmi < 35) {
+                    System.out.println("You have 1 degree of obesity");
+                } else if (bmi >= 35 && bmi < 40) {
+                    System.out.println("You have 2 degree of obesity");
+                } else {
+                    System.out.println("You have 3 degree of obesity");
+                }
+            } else {
+                System.out.println("Incorrect data entered !!!!!!!!!");
+            }
+        } else {
+            System.out.println("---------------------------------");
+            System.out.println("Incorrect data entered !!!!!!!!!");
+        }
     }
 
     public static void calculator() {
@@ -32,18 +70,23 @@ public class ZadaniaZeScannerem {
         int number = getNumberFromUser("Choose your decision: ");
         if (number >= 0 && number < 5) {
             System.out.println("---------------------------------");
-            int a = getNumberFromUser("Insert first number: ");
-            int b = getNumberFromUser("Insert second number: ");
+            int firstNumber = getNumberFromUser("Insert first number: ");
+            int secondNumber = getNumberFromUser("Insert second number: ");
             System.out.println("---------------------------------");
-            System.out.print("Your result is: ");
-            if (number == 1) {
-                System.out.println(a + " + " + b + " = " + (a + b));
-            } else if (number == 2) {
-                System.out.println(a + " - " + b + " = " + (a - b));
-            } else if (number == 3) {
-                System.out.println(a + " * " + b + " = " + (a * b));
+            if (secondNumber != 0) {
+                System.out.print("Your result is: ");
+                if (number == 1) {
+                    System.out.println(firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
+                } else if (number == 2) {
+                    System.out.println(firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
+                } else if (number == 3) {
+                    System.out.println(firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
+                } else {
+                    System.out.println(firstNumber + " / " + secondNumber + " = " + ((double) firstNumber / secondNumber));
+                }
             } else {
-                System.out.println(a + " / " + b + " = " + (a / b));
+                System.out.println("Incorrect data entered !!!!!!!!!");
+                System.out.println("---------------------------------");
             }
         } else {
             System.out.println("---------------------------------");
@@ -51,7 +94,6 @@ public class ZadaniaZeScannerem {
             System.out.println("---------------------------------");
         }
     }
-
 
     public static double avgOfGrades() {
         int size = getNumberFromUser("Insert numbers of grades: ");
@@ -86,9 +128,7 @@ public class ZadaniaZeScannerem {
     public static void listEvenNumbersFromUser() {
         int a = getNumberFromUser();
         Zajecia4.printEvenLessThan(a);
-
     }
-
 
     public static void compareThreeNumbersFromUser() {
         int a = getNumberFromUser();
@@ -111,7 +151,6 @@ public class ZadaniaZeScannerem {
 
     public static void listNumbersFromUser() {
         Zajecia4.printLessThan(getNumberFromUser());
-
     }
 
     public static int getNumberFromUser() {

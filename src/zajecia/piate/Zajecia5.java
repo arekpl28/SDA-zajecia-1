@@ -1,10 +1,8 @@
 package zajecia.piate;
 
-
 import zajecia.czwarte.ZadaniaZeScannerem;
-import zajecia.czwarte.Zajecia4;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Zajecia5 {
     public static void main(String[] args) {
@@ -12,7 +10,77 @@ public class Zajecia5 {
 //        triangle(7);
 //        tree(3);
 //        oneMatrix(6);
-        evenMatrix(8);
+//        evenMatrix(8);
+//        sumOfNumberFromUser();
+        Random random = new Random();
+        int iloscKrokowDoZwyciestwa = game(random.nextInt(100));
+        System.out.println("Koniec gry.");
+        System.out.println("Wygrales w " + iloscKrokowDoZwyciestwa + " krokach.");
+//        int[] wynik = arrayOfNumbersFromUser();
+//        printArray(wynik);
+    }
+
+    public static int game(int number) {
+        int counter = 0;
+        boolean flag = true;
+        while (flag) {
+            int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Insert your number: ");
+            counter++;
+            if (numberFromUser < number) {
+                System.out.println("Twoja liczba jest za mala. Proba" + "[" + counter + "]");
+            } else if (numberFromUser > number) {
+                System.out.println("Twoja liczba jest za duza. Proba" + "[" + counter + "]");
+            } else {
+                flag = false;
+            }
+        }
+        return counter;
+    }
+
+    public static int[] arrayOfNumbersFromUser() {
+        int[] tmpArray = new int[100];
+        int size = 0;
+        boolean flag = true;
+        while (flag) {
+            int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Insert your number: ");
+            if (numberFromUser != 0) {
+                tmpArray[size] = numberFromUser;
+                size++;
+            } else {
+                flag = false;
+            }
+        }
+        return revriteArray(tmpArray, size);
+    }
+
+    public static int[] revriteArray(int[] bigArray, int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = bigArray[i];
+        }
+        return array;
+    }
+
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static int sumOfNumberFromUser() {
+        int sum = 0;
+        boolean flag = true;
+        while (flag) {
+            int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Insert next number: ");
+            if (numberFromUser != 0) {
+                sum += numberFromUser;
+
+            } else {
+                flag = false;
+            }
+
+        }
+        return sum;
     }
 
     public static void evenMatrix(int number) {

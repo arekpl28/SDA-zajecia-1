@@ -27,13 +27,13 @@ public class ZadaniaZeScannerem {
         System.out.println("CALCULATOR BMI");
         System.out.println("---------------------------------");
         System.out.print("Please enter your height in centimeters: ");
-        double hight = scanner.nextDouble();
-        if (hight > 20 && hight < 500) {
+        double height = scanner.nextDouble();
+        if (height > 20 && height < 500) {
             System.out.print("Please enter your weight: ");
             int weight = scanner.nextInt();
             System.out.println("---------------------------------");
             if (weight > 10) {
-                double hightBmi = hight / 100;
+                double hightBmi = height / 100;
                 double bmi = weight / (hightBmi * hightBmi);
                 System.out.println("Your BMI is: " + bmi);
                 System.out.println("---------------------------------");

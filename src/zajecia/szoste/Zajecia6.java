@@ -3,6 +3,8 @@ package zajecia.szoste;
 
 import zajecia.czwarte.ZadaniaZeScannerem;
 
+import java.util.Scanner;
+
 public class Zajecia6 {
     public static void main(String[] args) {
 
@@ -11,8 +13,38 @@ public class Zajecia6 {
 
 //        int numberOfElements = sumUntil(23);
 //        System.out.println("Podano: "+numberOfElements+" liczb");
-        calculator();
+//        calculator();
+//        System.out.println(cezarCode("Wojna"));
+//        System.out.println(cezarCode("Hello World", 2));
+//        System.out.println(cezarCode("The End", 4));
+        System.out.println("Zakodowane: ");
+        String message = "Wojna";
+        String codded = cezarCode(message, 2);
+        System.out.println(codded);
 
+        System.out.println("Odkodowane: ");
+        System.out.println(decodeCezarCode(codded, 2));
+
+    }
+
+    public static String decodeCezarCode(String coddedMessage, int key) {
+        return cezarCode(coddedMessage, -key);
+    }
+    public static String decodeCezarCode(String coddedMessage) {
+        return cezarCode(coddedMessage, -1);
+    }
+
+
+    public static String cezarCode(String message) {
+        return cezarCode(message, 1);
+    }
+
+    public static String cezarCode(String message, int key) {
+        char[] charArray = message.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char) (charArray[i] + key);
+        }
+        return String.valueOf(charArray);
     }
 
     public static void calculator() {

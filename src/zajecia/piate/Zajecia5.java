@@ -12,13 +12,16 @@ public class Zajecia5 {
 //        oneMatrix(6);
 //        evenMatrix(8);
 //        sumOfNumberFromUser();
-        Random random = new Random();
-        int iloscKrokowDoZwyciestwa = game(random.nextInt(100));
-        System.out.println("Koniec gry.");
-        System.out.println("Wygrales w " + iloscKrokowDoZwyciestwa + " krokach.");
-//        int[] wynik = arrayOfNumbersFromUser();
-//        printArray(wynik);
+//        Random random = new Random();
+//        int iloscKrokowDoZwyciestwa = game(random.nextInt(100));
+//        System.out.println("Koniec gry.");
+//        System.out.println("Wygrales w " + iloscKrokowDoZwyciestwa + " krokach.");
+        int[] wynik = arrayOfNumbersFromUser();
+        printArray(wynik);
     }
+//    public static int errayFromUser( int [] array, int []array2){
+//
+//    }
 
     public static int game(int number) {
         int counter = 0;
@@ -62,9 +65,11 @@ public class Zajecia5 {
     }
 
     public static void printArray(int[] array) {
+        System.out.print("{");
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i] + ", ");
         }
+        System.out.print("}");
     }
 
     public static int sumOfNumberFromUser() {
@@ -78,7 +83,6 @@ public class Zajecia5 {
             } else {
                 flag = false;
             }
-
         }
         return sum;
     }
@@ -136,7 +140,6 @@ public class Zajecia5 {
                 System.out.print(" ");
             }
             System.out.println("*");
-
         }
     }
 

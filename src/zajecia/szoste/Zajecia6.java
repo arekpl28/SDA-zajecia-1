@@ -34,7 +34,6 @@ public class Zajecia6 {
         return cezarCode(coddedMessage, -1);
     }
 
-
     public static String cezarCode(String message) {
         return cezarCode(message, 1);
     }
@@ -60,11 +59,11 @@ public class Zajecia6 {
             int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Podaj dzialanie:");
             if (numberFromUser == 0) {
                 System.out.println("--------------------------------------");
-                System.out.println("The end.");
+                System.out.println("The End.");
                 flag = false;
             } else if (numberFromUser > 0 && numberFromUser < 5) {
-                int firstNumber = ZadaniaZeScannerem.getNumberFromUser("Instert first number: ");
-                int secondNumber = ZadaniaZeScannerem.getNumberFromUser("Inster second number: ");
+                int firstNumber = ZadaniaZeScannerem.getNumberFromUser("Insert first number: ");
+                int secondNumber = ZadaniaZeScannerem.getNumberFromUser("Insert second number: ");
                 switch (numberFromUser) {
                     case 1:
                         System.out.println(firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
@@ -104,16 +103,16 @@ public class Zajecia6 {
     public static int avgUntil(int avg) {
         boolean flag = true;
         int sum = 0;
-        int couter = 0;
+        int counter = 0;
         while (flag) {
             int numberFromUser = ZadaniaZeScannerem.getNumberFromUser();
             sum += numberFromUser;
-            couter++;
-            if ((double) sum / couter > avg) {
+            counter++;
+            if ((double) sum / counter > avg) {
                 flag = false;
             }
         }
-        return couter;
+        return counter;
     }
 
     public static int sumUntil(int sum) {

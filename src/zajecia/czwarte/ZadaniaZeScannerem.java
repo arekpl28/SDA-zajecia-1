@@ -154,7 +154,7 @@ public class ZadaniaZeScannerem {
     }
 
     public static int getNumberFromUser() {
-        return getNumberFromUser("Please insert you number");
+        return getNumberFromUser("Please insert you number: ");
     }
 
     public static int getNumberFromUser(String message) {

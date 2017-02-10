@@ -3,7 +3,7 @@ package zajecia;
 public class Zajecia1 {
     public static void main(String[] args) {
 //        checkEvenOrOdd();
-//        array();
+        array();
 //        displayArray();
 //        listEven();
 //        sumOfEven();

@@ -1,31 +1,54 @@
 package zajecia.osiem;
 
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import zajecia.siodmy.Zajecia7;
 
 public class Zajecia8 {
     public static void main(String[] args) {
 //        System.out.println(factorial(4));
-
 //        System.out.println(factorialRecursion(4));
-
 //        System.out.println(fibonacciNumber(2));
-
 //        System.out.println(fibonacciNumberRec(43));
-
 //        String message = switchCase("Czesc jak sie masz");
 //        System.out.println(message);
-
 //        System.out.println(switchCase("Czesc AsassSS"));
-
 //        System.out.println(switchCaseWithBuilder("sadDSADasdsaDASDas"));
-
 //        System.out.println(sumOfNumberDigits(123));
-        System.out.println(startsWith2("Ala ma kota", "Ala mae"));
-        System.out.println(startsWith3("Ala ma kota", "Ala mae"));
-        System.out.println(startsWith1("Ala ma kota", "Ala ma"));
+//        System.out.println(startsWith2("Ala ma kota", "Ala mae"));
+//        System.out.println(startsWith3("Ala ma kota", "Ala mae"));
+//        System.out.println(startsWith1("Ala ma kota", "Ala ma"));
+        String message = "Ala ma kota i malego psa";
+        String[] array = split2(message);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
+                continue;
+            } else {
+                System.out.println(array[i]);
+            }
+        }
+    }
 
+    public static String[] split2(String message) {
+        String[] strings = new String[100];
+        int i = 0;
+        boolean flag = true;
+        int tmp = 0;
+        while (flag) {
+            int indexOfSpace = message.indexOf(' ', tmp);
+            String substring;
+            if (indexOfSpace == -1) {
+                substring = message.substring(tmp);
+            } else {
+                substring = message.substring(tmp, indexOfSpace);
+            }
+            tmp = indexOfSpace + 1;
+            strings[i] = substring;
+            i++;
+            if (indexOfSpace == -1) {
+                flag = false;
+            }
+        }
+        return strings;
     }
 
     public static boolean startsWith3(String message, String expression) {

@@ -24,4 +24,14 @@ public class User {
             address.print();
         }
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }
